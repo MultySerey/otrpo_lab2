@@ -31,14 +31,15 @@ def detect_faces(image_path: str) -> None:
 
 
 def main() -> None:
-    print(sys.argv)
+    # print(sys.argv)
 
     # if len(sys.argv) > 1:
     #     image_path = sys.argv[1]
     # else:
-    #     image_path = "photo.jpg"  # Путь к изображению в репозитории по умолчанию
+    #     # Путь к изображению в репозитории по умолчанию
+    #     image_path = "photo.jpg"
 
-    # detect_faces(image_path)
+    detect_faces("photo.jpg")
 
 
 if __name__ == "__main__":
