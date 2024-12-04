@@ -1,5 +1,5 @@
 import cv2
-import sys
+import argparse
 
 
 def detect_faces(image_path: str) -> None:
@@ -15,7 +15,7 @@ def detect_faces(image_path: str) -> None:
 
     # Загрузить классификатор для распознавания лиц
     face_cascade = cv2.CascadeClassifier(
-        cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
+        cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
     )
 
     # Найти лица на изображении
@@ -31,15 +31,20 @@ def detect_faces(image_path: str) -> None:
 
 
 def main() -> None:
-    # print(sys.argv)
+    parser = argparse.ArgumentParser(
+        prog="OTRPO Lab 2",
+        description="Лабораторная работа 2 по ОТРПО"
+    )
+    parser.add_argument(
+        "image_file_path",
+        type=str,
+        help="Путь к изображению",
+        nargs="?",
+        default="photo.jpg"
+    )
+    args = parser.parse_args()
 
-    # if len(sys.argv) > 1:
-    #     image_path = sys.argv[1]
-    # else:
-    #     # Путь к изображению в репозитории по умолчанию
-    #     image_path = "photo.jpg"
-
-    detect_faces("photo.jpg")
+    detect_faces(args.image_file_path)
 
 
 if __name__ == "__main__":
