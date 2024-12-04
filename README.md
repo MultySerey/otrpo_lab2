@@ -1,29 +1,16 @@
-# Face Detection App
-
-Это приложение на Python использует OpenCV для распознавания лиц на изображении.
-
-## Как запустить
-
-1. Склонируйте репозиторий:
-
-```powershell
-git clone https://github.com/username/repository.git
+# Лабораторная работа 2 по ОТРПО
+Приложение для определения лиц на фотографии.
+## Использование
 ```
+usage: OTRPO Lab 2 [-h] [image_file_path]
 
-2. Соберите Docker-образ:
+Лабораторная работа 2 по ОТРПО
 
-```powershell
-docker build -t face-detection-app .
+positional arguments:
+  image_file_path  Путь к изображению. Если отсутствует, то использует photo.jpg
+
+options:
+  -h, --help       show this help message and exit
 ```
-
-3. Запустите приложение:
-
-```powershell
-docker run -v ${pwd}:/app face-detection-app photo.jpg
-```
-
-Либо используйте изображение с DockerHub:
-
-```powershell
-docker run -v $(pwd):/app username/face-detection-app:latest photo.jpg
-```
+## Результат
+Результат выводится в stdout.
